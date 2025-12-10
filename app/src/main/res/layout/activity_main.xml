@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#7dab48"
+    tools:context=".MainActivity">
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottieAnimationView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="180dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="false"
+        app:lottie_loop="false"
+        app:lottie_rawRes="@raw/snoopdogg" />
+
+    <!-- Pulsanti Torcia -->
+    <LinearLayout
+        android:id="@+id/flashlightControls"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@id/songControls"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <Button
+            android:id="@+id/flashlightToggle"
+            android:layout_width="140dp"
+            android:layout_height="60dp"
+            android:text="TORCIA"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:backgroundTint="#F44336"
+            android:layout_marginEnd="12dp" />
+
+        <Button
+            android:id="@+id/flashlightLock"
+            android:layout_width="140dp"
+            android:layout_height="60dp"
+            android:text="MANTIENI"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:backgroundTint="#9E9E9E" />
+    </LinearLayout>
+
+    <!-- Pulsanti Canta e Stop -->
+    <LinearLayout
+        android:id="@+id/songControls"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@id/audioButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <Button
+            android:id="@+id/singButton"
+            android:layout_width="140dp"
+            android:layout_height="60dp"
+            android:text="CANTA"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:backgroundTint="#d9a94a"
+            android:layout_marginEnd="12dp" />
+
+        <Button
+            android:id="@+id/stopButton"
+            android:layout_width="140dp"
+            android:layout_height="60dp"
+            android:text="STOP"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:backgroundTint="#F44336"
+            android:textColor="@color/white"
+            android:enabled="false" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/audioButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Pulsante Muto -->
+        <Button
+            android:id="@+id/muteButton"
+            android:layout_width="294dp"
+            android:layout_height="60dp"
+            android:layout_marginBottom="16dp"
+            android:backgroundTint="#8d10cc"
+            android:text="AUDIO"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/flashlightControls"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

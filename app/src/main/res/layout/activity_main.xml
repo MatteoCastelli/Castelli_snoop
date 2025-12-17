@@ -21,7 +21,6 @@
         app:lottie_loop="false"
         app:lottie_rawRes="@raw/snoopdogg" />
 
-    <!-- Pulsanti Torcia -->
     <LinearLayout
         android:id="@+id/flashlightControls"
         android:layout_width="wrap_content"
@@ -52,7 +51,6 @@
             android:backgroundTint="#9E9E9E" />
     </LinearLayout>
 
-    <!-- Pulsanti Canta e Stop -->
     <LinearLayout
         android:id="@+id/songControls"
         android:layout_width="wrap_content"
@@ -95,7 +93,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <!-- Pulsante Muto -->
         <Button
             android:id="@+id/muteButton"
             android:layout_width="294dp"

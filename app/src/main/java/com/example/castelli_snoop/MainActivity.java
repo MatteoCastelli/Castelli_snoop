@@ -248,7 +248,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
-                    } else if (fos != null && !isPlayingSound && canRecordAudio) {
+                    } else if (fos != null && !isPlayingSound && canRecordAudio && amplitude <= 1000) {
                         try {
                             fos.close();
                             fos = null;
@@ -298,8 +298,11 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                 playAnimationForRepeat();
 
                 mediaPlayer.setOnCompletionListener(mp -> {
-                    isPlayingSound = false;
-                    canRecordAudio = true;
+                    // Ritardo prima di riabilitare la registrazione per evitare il loop
+                    handler.postDelayed(() -> {
+                        isPlayingSound = false;
+                        canRecordAudio = true;
+                    }, 500); // Mezzo secondo di pausa
                 });
 
             } catch (IOException e) {
